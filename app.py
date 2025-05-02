@@ -1,10 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 import os
 from database import execute_query, get_db_connection
+from dotenv import load_dotenv
+
+load_dotenv()  # Load environment variables from .env file
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)  # Use a fixed secret key in production
-
+app.secret_key = os.getenv("SECRET_KEY")  # Use secret key from .env file
 
 # @app.route('/')
 # def home():
@@ -308,18 +310,7 @@ def active_orders():
     active_orders = execute_query(query, fetchall=True)
     return render_template('order/active_orders.html', active_orders=active_orders)
 
-# @app.route('/orders', methods=['GET'])
-# def view_orders():
-#     if 'user_id' not in session:
-#         return redirect(url_for('login'))
-    
-#     query = """
-#     SELECT id, table_number, customer_name, status, total_amount, created_at
-#     FROM customer_order
-#     ORDER BY created_at DESC
-#     """
-#     orders = execute_query(query, fetchall=True)
-#     return render_template('order/view_orders.html', orders=orders)
+
 @app.route('/orders', methods=['GET'])
 def view_orders():
     if 'user_id' not in session:
