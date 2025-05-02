@@ -1,0 +1,80 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environment
+venv/
+ENV/
+env/
+venv.bak/
+*.env
+
+# Flask stuff
+instance/
+*.db
+*.sqlite3
+*.log
+*.pid
+*.swp
+
+# Oracle client files
+*.dmp
+*.log
+*.ctl
+*.ora
+*.dat
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# MacOS / Linux / Windows
+.DS_Store
+Thumbs.db
+
+# Pytest / coverage
+.cache/
+.coverage
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter notebooks
+*.ipynb_checkpoints
+
+# Environment variables
+.env
+.env.*
+
+# Migrations
+migrations/
+alembic/
+
+# Custom Oracle configurations
+network/admin/tnsnames.ora
+network/admin/sqlnet.ora
+network/admin/listener.ora
