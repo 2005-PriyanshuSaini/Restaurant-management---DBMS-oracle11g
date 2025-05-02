@@ -2,10 +2,11 @@ import cx_Oracle
 import os
 from contextlib import contextmanager
 
-# Database connection details
-DB_USER = "restaurant"
-DB_PASSWORD = "restaurant" 
-DB_DSN = "localhost:1521/xe"  
+# Database connection details from environment variables
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_DSN = os.getenv("DB_DSN")
+
 @contextmanager
 def get_db_connection():
     """Context manager for Oracle database connections"""
